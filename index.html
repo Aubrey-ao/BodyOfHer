@@ -1,1 +1,365 @@
-Welcome!
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="An end-to-end interactive virtual humanoid agent framework.">
+  <meta name="keywords" content="interactive humanoid agent, multi-modal model, world simulator">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Body of Her: A Preliminary Study on End-to-End Humanoid Agent</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CYQP182Q4F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CYQP182Q4F');
+</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Body of Her: A Preliminary Study on End-to-End Humanoid Agent</h1>
+          <div class="is-size-3 publication-authors">
+            Technical Report v1
+          </div>
+          
+          <br>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://aubrey-ao.github.io/">Tenglong Ao</a>, Peking University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="xxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="column is-centered has-text-centered">
+        <img src="./static/images/teaser.png" alt="interactive humanoid agent system"/>
+      </div>
+      <h2 class="subtitle has-text-justified">
+        The system continuously synthesizes the agent's voice and visual appearance based on multi-source streaming inputs, including the interlocutor's auditory and visual behaviors and specific control signals. The visual representation can be in video or 3D motion form, depending on rendering and computational power. Control signals use text descriptions for high-level behaviors like emotions and motion trajectories for low-level joint movement guidance.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Interactive virtual humanoid agent is a crucial interface with the physical world. A relatively complete humanoid agent first needs to have face and body, then possess both verbal and non-verbal (such as eye contact, facial expression, lip motion, gesture, and manipulation) abilities, and finally, it is capable of real-time duplex communication, e.g., the ability to actively interrupt conversations. Most prior systems typically only consider a subset of these elements, leaving a gap from realistic humanoid agent. In this work, we propose a real-time, duplex, interactive end-to-end network capable of modeling realistic agent behaviors, including speech, full-body movements for talking, responding, idling, and manipulation. This system is a multimodal model integrating audio and visual inputs, extended from a pre-trained large language model (LLM). We collect approximately 200,000 hours of audio, around 130,000 hours of video data, and about 20,000 alignment samples to build the model. The final model demonstrates capabilities that are difficult to achieve in previous systems, such as generalized object manipulation. This work performs a preliminary exploration of the end-to-end approach in this field, aiming to inspire further research towards scaling up.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">  
+    <div class="column has-text-centered">
+      <h2 class="title is-3">Demo</h2>
+      <div class="content has-text-justified">
+        <p>
+          To protect personal privacy, the head part of characters in all demonstrated results are covered with animated Memoji, and the audio is modified to disguise their voices.
+        </p>
+        <p>
+          To specify the initial frame for the agent, we first select an image of an empty scene. Subsequently, we directly insert the image of the agent in a specific pose along with the images of the objects to be interacted with into the empty scene to obtain the initial frame. Referring to <a href="https://arxiv.org/abs/2407.02489">Magic Insert</a>, the insertion process can be refined using image generation models.
+        </p>
+        <p>
+          For all demos, the topics of conversations with the agent, the scenarios, and the objects the agent interacts with are out-of-distribution (OOD). This indicates that the test cases have never appeared in the corresponding customized agent training dataset. The model may have been exposed to functionally similar scenarios and objects during the pre-training phase, thereby knowing how to interact with them.
+        </p>
+        <p>
+          Video frames occasionally exhibit pauses and abrupt changes. This issue arises because the model inference sometimes fails to achieve real-time output, leading us to forcibly align the human and agent timelines. This problem can be addressed in the future by optimizing the inference architecture.
+        </p>
+      </div>
+    </div> 
+
+    <div class="column">
+      <h3 class="title is-4">Conversation Scenario</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo1:</b> the two parties engage in a discussion on the methods of brewing Vitamin C.
+          </p>
+          <video poster="" id="demo1" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo1.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo2:</b> the human instructs the agent to draw some simple patterns.
+          </p>
+          <video poster="" id="demo2" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo2.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo3:</b> the agent acts as a salesperson selling fruit.
+          </p>
+          <video poster="" id="demo3" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo3.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo4:</b> the agent functions as a tour guide introducing Beijing.
+          </p>
+          <video poster="" id="demo4" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo4.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo5:</b> the agent counsels a human interlocutor who is experiencing anxiety due to the upcoming exams.
+          </p>
+          <video poster="" id="demo5" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo5.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo6:</b> the agent provides the human interlocutor with an introduction to artificial intelligence and its learning pathway.
+          </p>
+          <video poster="" id="demo6" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo6.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo7:</b> the agent perceives and describes the layout of the environment, then proposes specific renovation ideas based on the human interlocutor's decor theme.
+          </p>
+          <video poster="" id="demo7" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/conversation/demo7.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <h3 class="title is-4">Manipulation Scenario</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo8:</b> the agent demonstrates the proper use of sunscreen lotion.
+          </p>
+          <video poster="" id="demo8" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/manipulation/demo8.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo9:</b> the agent demonstrates the process of folding a towel.
+          </p>
+          <video poster="" id="demo9" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/manipulation/demo9.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo10:</b> the agent cuts the paper strip according to the human interlocutor's instructions.
+          </p>
+          <video poster="" id="demo10" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/manipulation/demo10.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo11:</b> the agent demonstrates how to wear slippers.
+          </p>
+          <video poster="" id="demo11" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/manipulation/demo11.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column">
+      <h3 class="title is-4">Idling Scenario</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo12:</b> the agent's idling behavior (video sound removed) sampled given an initial frame and empty inputs.
+          </p>
+          <video poster="" id="demo12" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/idling/demo12.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo13:</b> the agent's idling behavior (video sound removed) sampled given an initial frame and empty inputs.
+          </p>
+          <video poster="" id="demo13" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/idling/demo13.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-justified">
+          <p>
+            <b>Demo14:</b> the agent's idling behavior (video sound removed) sampled given an initial frame and empty inputs.
+          </p>
+          <video poster="" id="demo14" controls playsinline style="width: auto; height: auto;">
+            <source src="./static/videos/idling/demo14.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <h3 class="title is-4">Enhancing Reasoning via Chain-of-Thought (CoT)</h3>
+      <div class="column is-centered has-text-justified">
+        <p>
+          <b>Demo15:</b> we can enhance the model's reasoning capability through Chain-of-Thought (CoT) (see Section 5.2 of the paper for details). For instance, in Demo15, the agent can systematically manage the teaching progress of classical poetry, accurately recognize facial expressions (which Memoji may not be able to estimate accurately) and gestures.
+        </p>
+        <br>
+        <video poster="" id="demo15" controls playsinline style="width: auto; height: auto;">
+          <source src="./static/videos/reasoning/demo15.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="column">
+      <h3 class="title is-4">Example of Question-Answer Safety</h3>
+      <div class="column is-centered has-text-justified">
+        <p>
+          <b>Demo16:</b> through Reinforcement Learning with Human Feedback (RLHF), the model can to some extent "know what it doesn't know" and understands how to decline requests. Given the extensive variety of interactable objects, coupled with limited datasets and computational resources, we collect cases of non-interactable objects during the alignment phase to teach the model to refuse interactions, thereby avoiding significant artifacts. For example, in Demo16, the agent can refuse interaction requests for non-operable objects.
+        </p>
+        <br>
+        <video poster="" id="demo16" controls playsinline style="width: auto; height: auto;">
+          <source src="./static/videos/alignment/demo16.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Limitation</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Constrained by model size, there may be issues with logical inconsistencies in the question-and-answer process. The expansion of model size and the requirement for real-time inference are inherently contradictory. As computational power and inference techniques advance, it is expected to be alleviated.</li>
+            <li>To ensure long-term identity consistency, the appearance of the agent, such as clothing, must align with the corresponding agent's training data. It is challenging to re-edit the agent's attire as needed. In the future, a more flexible approach is to create a specific agent through a single image prompt or a short video prompt.</li>
+            <li>The generated results exhibit inconsistencies with the laws of physics. For instance, (a) In Demo1, vitamin C should be taken out of the box rather than appearing spontaneously from behind the box; (b) In Demo10, after the second cutting, the paper strip reattaches itself automatically; (c) At the end of Demo11, the agent's right hand has only four fingers.</li>
+            <li>The agent exhibits spatial disorientation regarding left and right. For example, in Demo7, the curtain should be positioned to the right of the agent rather than to the left.</li>
+            <li>In the real world, there are numerous interactive objects. But due to limitations in the dataset and computational resources, the interaction process of the agent may exhibit artifacts.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ao2024bodyofher,
+  author    = {Ao, Tenglong},
+  title     = {Body of Her: A Preliminary Study on End-to-End Humanoid Agent},
+  journal   = {arXiv},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Acknowledgement</h2>
+        <div class="content has-text-justified">
+          <p>
+            It is precisely due to the increasing maturity and lower barriers of the deep learning community in areas such as multi-modal data collection and filtering, foundational models, GPU cluster cloud services, and distributed training frameworks, that the preliminary exploration of the system described in this paper has become feasible with relatively minimal human and financial resources.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        <p>
+         Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
