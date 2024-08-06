@@ -226,14 +226,14 @@
           </video>
         </div>
 
-        <div class="column is-centered has-text-justified">
+        <!-- <div class="column is-centered has-text-justified">
           <p>
             <b>Demo11:</b> the agent demonstrates how to wear slippers.
           </p>
           <video poster="" id="demo11" controls playsinline style="width: auto; height: auto;">
             <source src="./static/videos/manipulation/demo11.mp4" type="video/mp4">
           </video>
-        </div>
+        </div> -->
       </div>
     </div>
     
@@ -307,7 +307,7 @@
           <ul>
             <li>Constrained by model size, there may be issues with logical inconsistencies in the question-and-answer process. The expansion of model size and the requirement for real-time inference are inherently contradictory. As computational power and inference techniques advance, it is expected to be alleviated.</li>
             <li>To ensure long-term identity consistency, the appearance of the agent, such as clothing, must align with the corresponding agent's training data. It is challenging to re-edit the agent's attire as needed. In the future, a more flexible approach is to create a specific agent through a single image prompt or a short video prompt.</li>
-            <li>The generated results exhibit inconsistencies with the laws of physics. For instance, (a) In Demo1, vitamin C should be taken out of the box rather than appearing spontaneously from behind the box; (b) In Demo10, after the second cutting, the paper strip reattaches itself automatically; (c) At the end of Demo11, the agent's right hand has only four fingers.</li>
+            <li>The generated results exhibit inconsistencies with the laws of physics. For instance, (a) In Demo1, vitamin C should be taken out of the box rather than appearing spontaneously from behind the box; (b) In Demo10, after the second cutting, the paper strip reattaches itself automatically; (c) Sometimes, the agent does not strictly have five fingers on one of its hands.</li>
             <li>The agent exhibits spatial disorientation regarding left and right. For example, in Demo7, the curtain should be positioned to the right of the agent rather than to the left.</li>
             <li>In the real world, there are numerous interactive objects. But due to limitations in the dataset and computational resources, the interaction process of the agent may exhibit artifacts.</li>
             <li>The primary reason for the system's capability to produce highly consistent video results is the limited scope of the modeled scenarios, mainly focusing on "two-person dialogues in static scenes." While ensuring real-time performance, we believe that with the expansion of the model and data scale, this paradigm has the potential to address more complex and generalized scenarios, such as intricate dynamic scenes, high-degree-of-freedom agent navigation, multi-agent interactions, and dialogues involving non-humanoid agents.</li>
